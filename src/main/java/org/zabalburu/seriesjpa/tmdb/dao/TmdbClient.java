@@ -28,6 +28,7 @@ public class TmdbClient {
     public List<TmdbSerieDTO> buscarSeries(String texto) {
         try {
             String query = URLEncoder.encode(texto, StandardCharsets.UTF_8);
+            
             String url = TmdbConfig.getBaseUrl()
                     + "/search/tv?api_key=" + TmdbConfig.getApiKey()
                     + "&language=es-ES"
