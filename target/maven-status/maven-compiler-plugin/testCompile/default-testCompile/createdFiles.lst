@@ -1,0 +1,4 @@
+org\zabalburu\seriesjpa\tmdb\em\PersistenciaBasicaTest.class
+org\zabalburu\seriesjpa\tmdb\servicio\SerieImportServiceTest.class
+org\zabalburu\seriesjpa\tmdb\modelo\ValoracionTest.class
+org\zabalburu\seriesjpa\tmdb\servicio\ValoracionServiceTest.class
