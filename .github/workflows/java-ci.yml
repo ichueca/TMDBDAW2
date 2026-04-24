@@ -1,0 +1,37 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+          cache: maven
+
+      - name: Compilar proyecto
+        run: mvn compile
+
+      - name: Ejecutar tests
+        run: mvn test
+
+      - name: Generar jar
+        run: mvn clean package
+
+      - name: Guardar artefacto generado
+        uses: actions/upload-artifact@v4
+        with:
+          name: SeriesJPA-jar
+          path: target/*-jar-with-dependencies.jar
