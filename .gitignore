@@ -1,0 +1,11 @@
+target/
+.idea/
+*.iml
+out/
+
+data/
+*.mv.db
+*.trace.db
+
+.env
+config-local.properties
